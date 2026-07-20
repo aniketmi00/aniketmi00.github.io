@@ -124,7 +124,7 @@ body {
   background: var(--bg);
   color: var(--tx);
   font-size: clamp(1rem, 0.95rem + 0.35vw, 1.15rem);
-  max-width: 40em;
+  max-width: 48em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -303,7 +303,7 @@ code {
   color: var(--tx);
   padding: 0.1em 0.3em;
   border-radius: $border-radius;
-  font-size: 0.9em;
+  font-size: 1em;
   font-family: $mono-family;
 }
 
