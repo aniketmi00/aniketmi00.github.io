@@ -417,6 +417,13 @@ mark {
 
 .theme-dark #theme-toggle .theme-toggle-switch { left: 23px; background: var(--tx); }
 
+// Section labels on home (latest / writing)
+.section-label {
+  color: var(--tx-muted);
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+
 // Latest highlight on home
 .latest {
   margin: 0.6em 0 2.8em;
