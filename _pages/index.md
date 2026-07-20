@@ -8,7 +8,7 @@ permalink: /
 {% assign posts = site.notes | sort: "date" | reverse %}
 {% assign latest = posts | first %}
 
-<div class="section-label">latest</div>
+<div class="section-label">Latest</div>
 
 <div class="latest">
   <a class="latest-title internal-link" href="{{ site.baseurl }}{{ latest.url }}">{{ latest.title }}</a>
@@ -18,7 +18,7 @@ permalink: /
 
 <hr>
 
-<div class="section-label">writing</div>
+<div class="section-label">Writing</div>
 
 <ul class="recent-notes">
   {% for note in posts %}
