@@ -8,16 +8,13 @@ permalink: /
 {% assign posts = site.notes | sort: "date" | reverse %}
 
 <div class="intro">
-  <div class="intro-name">{{ site.title }}</div>
-  <p>i work on model inference systems for <a href="https://www.hbomax.com">HBO Max</a> @ <a href="https://www.wbd.com">Warner Bros. Discovery</a>. i write mostly about machine learning, systems i've built, and things i'm reading.</p>
+  <p>I'm Aniket. I work on model inference systems for <a href="https://www.hbomax.com">HBO Max</a> @ <a href="https://www.wbd.com">Warner Bros. Discovery</a>. I write about machine learning, systems I've built, and things I'm reading.</p>
   <div class="intro-social">
     {% include social-icons.html %}
   </div>
 </div>
 
 <hr>
-
-<div class="section-label">writing</div>
 
 <ul class="recent-notes">
   {% for note in posts %}
