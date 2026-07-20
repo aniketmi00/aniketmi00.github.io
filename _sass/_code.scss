@@ -1,47 +1,65 @@
-// Code blocks + Rouge syntax highlighting, themed with Flexoki.
+// Code blocks + Rouge syntax highlighting.
+// Always dark (Flexoki dark palette) regardless of page theme.
 .highlight {
-  background: var(--bg-2);
-  border-radius: 6px;
+  // Fixed dark tokens so light mode gets the same vivid code block.
+  --code-bg: #1c1b1a;
+  --code-tx: #cecdc3;
+  --code-muted: #878580;
+  --code-faint: #575653;
+  --code-re: #d14d41;
+  --code-or: #da702c;
+  --code-ye: #d0a215;
+  --code-gr: #879a39;
+  --code-cy: #3aa99f;
+  --code-bl: #4385be;
+  --code-pu: #8b7ec8;
+  --code-ma: #ce5d97;
+
+  background: var(--code-bg);
+  color: var(--code-tx);
+  border-radius: 8px;
   padding: 0.2em 1.1em;
   font-size: 0.85em;
+  font-family: $mono-family;
   overflow: auto;
   margin: 1.5em 0;
 
   code {
     padding: 0;
     background: none;
+    color: var(--code-tx);
   }
 
   pre { margin: 0.6em 0; }
 
-  .c, .cm, .cp, .c1, .cs { color: var(--sy-comment); font-style: italic; } // comments
-  .err { color: var(--sy-re); }
-  .k { color: var(--sy-gr); }                                             // keyword
-  .o, .ow { color: var(--sy-re); }                                        // operator
-  .p { color: var(--tx-muted); }                                          // punctuation
+  .c, .cm, .cp, .c1, .cs { color: var(--code-faint); font-style: italic; } // comments
+  .err { color: var(--code-re); }
+  .k, .kn { color: var(--code-pu); }                                       // keyword (with, import, def)
+  .o, .ow { color: var(--code-re); }                                       // operator
+  .p { color: var(--code-muted); }                                         // punctuation
 
-  .kc, .kd, .kp, .kr, .kt { color: var(--sy-bl); }                        // keyword constant/type
-  .m, .mf, .mh, .mi, .mo, .il { color: var(--sy-pu); }                    // numbers
+  .kc, .kd, .kp, .kr, .kt { color: var(--code-pu); }                       // keyword constant/type
+  .m, .mf, .mh, .mi, .mo, .il { color: var(--code-pu); }                   // numbers
 
-  .s, .sb, .sc, .sd, .sh, .si, .sx, .dl { color: var(--sy-gr); }          // strings
-  .s1, .s2 { color: var(--sy-cy); }
-  .se, .sr, .ss { color: var(--sy-re); }
+  .s, .sb, .sc, .sd, .sh, .si, .sx, .dl { color: var(--code-gr); }         // strings
+  .s1, .s2 { color: var(--code-gr); }
+  .se, .sr, .ss { color: var(--code-re); }
 
-  .na { color: var(--sy-or); }                                            // attribute
-  .nb, .bp { color: var(--sy-gr); }                                       // builtin
-  .nc, .nf, .nt { color: var(--sy-bl); }                                  // class / function / tag
-  .no, .nv, .vc, .vg, .vi { color: var(--sy-cy); }                        // constant / variable
-  .nn { color: var(--tx-muted); }                                         // namespace
-  .ni, .ne { color: var(--sy-ma); }
+  .na { color: var(--code-or); }                                           // attribute
+  .nb, .bp { color: var(--code-cy); }                                      // builtin
+  .nc, .nf, .nt { color: var(--code-cy); }                                 // class / function / tag
+  .no, .nv, .vc, .vg, .vi { color: var(--code-bl); }                       // constant / variable
+  .nn { color: var(--code-muted); }                                        // namespace
+  .ni, .ne { color: var(--code-ma); }
 
-  .gd { color: var(--sy-re); }                                            // diff removed
-  .gi { color: var(--sy-gr); }                                            // diff added
+  .gd { color: var(--code-re); }                                           // diff removed
+  .gi { color: var(--code-gr); }                                           // diff added
   .ge { font-style: italic; }
   .gs { font-weight: bold; }
-  .gr, .gt { color: var(--sy-re); }
-  .gh, .gu, .go, .gp { color: var(--tx-muted); }
+  .gr, .gt { color: var(--code-re); }
+  .gh, .gu, .go, .gp { color: var(--code-muted); }
 
-  .w { color: var(--tx-faint); }
+  .w { color: var(--code-faint); }
 }
 
 div.highlight {

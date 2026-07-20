@@ -6,19 +6,18 @@ permalink: /
 ---
 
 {% assign posts = site.notes | sort: "date" | reverse %}
-{% assign latest = posts | first %}
 
-<div class="section-label">Latest</div>
-
-<div class="latest">
-  <a class="latest-title internal-link" href="{{ site.baseurl }}{{ latest.url }}">{{ latest.title }}</a>
-  <div class="latest-meta">{{ latest.date | date: "%B %-d, %Y" }}</div>
-  <p class="latest-excerpt">{{ latest.content | strip_html | strip_newlines | truncatewords: 28 }} <a class="internal-link" href="{{ site.baseurl }}{{ latest.url }}">Keep reading &rarr;</a></p>
+<div class="intro">
+  <div class="intro-name">{{ site.title }}</div>
+  <p>i work on model inference systems for <a href="https://www.hbomax.com">HBO Max</a> @ <a href="https://www.wbd.com">Warner Bros. Discovery</a>. i write mostly about machine learning, systems i've built, and things i'm reading.</p>
+  <div class="intro-social">
+    {% include social-icons.html %}
+  </div>
 </div>
 
 <hr>
 
-<div class="section-label">Writing</div>
+<div class="section-label">writing</div>
 
 <ul class="recent-notes">
   {% for note in posts %}

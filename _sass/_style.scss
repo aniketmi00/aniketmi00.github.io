@@ -105,8 +105,6 @@
 }
 
 $border-radius: 4px;
-$font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica,
-  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -156,26 +154,11 @@ footer {
   .footer-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
   }
 
-  .social {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.9rem;
-  }
-
-  .social-link {
-    display: inline-flex;
-    color: var(--tx-muted);
-    text-decoration: none;
-
-    &:after { content: ""; }
-    &:hover { color: var(--action); background: none; }
-
-    svg { display: block; }
+  .footer-time {
+    font-family: $mono-family;
+    font-variant-numeric: tabular-nums;
   }
 }
 
@@ -231,20 +214,6 @@ a {
   &:hover {
     color: var(--action);
     text-decoration-color: var(--action);
-  }
-
-  &:after {
-    position: relative;
-    top: -0.4em;
-    font-size: 0.65em;
-    content: "↗";
-    color: var(--tx-faint);
-  }
-
-  &.internal-link:after,
-  &.footnote:after,
-  &.reversefootnote:after {
-    content: "";
   }
 
   &.internal-link {
@@ -335,8 +304,7 @@ code {
   padding: 0.1em 0.3em;
   border-radius: $border-radius;
   font-size: 0.9em;
-  font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, Monaco,
-    Consolas, monospace;
+  font-family: $mono-family;
 }
 
 ul, ol {
@@ -417,10 +385,42 @@ mark {
 
 .theme-dark #theme-toggle .theme-toggle-switch { left: 23px; background: var(--tx); }
 
+// Intro block on home
+.intro {
+  margin: 0.5em 0 2em;
+
+  .intro-name {
+    color: var(--action);
+    font-weight: 500;
+    margin-bottom: 0.6em;
+  }
+
+  p {
+    margin: 0;
+    color: var(--tx);
+  }
+
+  .intro-social {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 1.1em;
+
+    .social-link {
+      color: var(--tx-muted);
+      display: inline-flex;
+      text-decoration: none;
+
+      &:hover { color: var(--action); }
+    }
+  }
+}
+
 // Section labels on home (latest / writing)
 .section-label {
   color: var(--tx-muted);
   font-weight: 400;
+  font-size: 0.85em;
   margin-bottom: 1em;
 }
 
@@ -467,7 +467,7 @@ mark {
     white-space: nowrap;
     color: var(--tx-muted);
     font-size: 0.8em;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-family: $mono-family;
   }
 
   a { flex: 1; }
