@@ -174,6 +174,6 @@ Dataiku is a user-friendly platform for developing AI/ML apps that can be used w
 
 ## References
 
-* [1] Tutorial | Jenkins pipeline for Dataiku with the Project Deployer
+* [1] Tutorial &mdash; Jenkins pipeline for Dataiku with the Project Deployer
 * [2] GitLab CI/CD
 * [3] Developer Guide
