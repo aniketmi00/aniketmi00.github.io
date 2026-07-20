@@ -1,16 +1,13 @@
 ---
 layout: page
-title: About
+title: about
 permalink: /about
 ---
 
-# About
+# about
 
-I'm Aniket. I work on ML systems and infrastructure, and write here about
-things I'm figuring out.
+i'm aniket. this is my blog, i work on the model inference systems for [HBO max](https://www.hbomax.com) @ [warner bros. discovery](https://www.wbd.com).
 
-- **GitHub:** [aniket-mish](https://github.com/aniket-mish)
-- **LinkedIn:** [aniket-mishrikotkar](https://www.linkedin.com/in/aniket-mishrikotkar)
+whenever i feel like it i jot down some thoughts on this webpage mostly on machine learning, things i've built, or stuff i'm reading. if you want to keep up with what i'm doing, you've come to the right place.
 
-This site is built with Jekyll and the [Flexoki](https://github.com/kepano/flexoki)
-palette, hosted on GitHub Pages.
+i'm always eager to meet like minded people in the field of ml. reach out to me on [linkedin](https://www.linkedin.com/in/aniketmish) for a chat.
