@@ -5,10 +5,20 @@ id: home
 permalink: /
 ---
 
-<strong>Writing</strong>
+{% assign posts = site.notes | sort: "date" | reverse %}
+{% assign latest = posts | first %}
+
+<strong>latest</strong>
+
+<div class="latest">
+  <a class="latest-title internal-link" href="{{ site.baseurl }}{{ latest.url }}">{{ latest.title }}</a>
+  <div class="latest-meta">{{ latest.date | date: "%B %-d, %Y" }}</div>
+  <p class="latest-excerpt">{{ latest.content | strip_html | strip_newlines | truncatewords: 28 }} <a class="internal-link" href="{{ site.baseurl }}{{ latest.url }}">Keep reading &rarr;</a></p>
+</div>
+
+<strong>writing</strong>
 
 <ul class="recent-notes">
-  {% assign posts = site.notes | sort: "date" | reverse %}
   {% for note in posts %}
     <li>
       <span class="recent-date">{{ note.date | date: "%Y &middot; %m" }}</span>

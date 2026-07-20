@@ -1,6 +1,6 @@
 title:               Aniket Mishrikotkar
 github:              aniket-mish
-linkedin:            aniket-mishrikotkar   # <-- set to your LinkedIn handle (linkedin.com/in/<handle>)
+linkedin:            aniketmish   # linkedin.com/in/<handle>
 include:             ['_pages']
 exclude:             ['_includes/notes_graph.json', 'README.md', 'LICENSE', 'netlify.toml']
 # For a user site (repo named aniketmi.github.io) keep baseurl empty.

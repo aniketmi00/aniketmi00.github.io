@@ -417,6 +417,30 @@ mark {
 
 .theme-dark #theme-toggle .theme-toggle-switch { left: 23px; background: var(--tx); }
 
+// Latest highlight on home
+.latest {
+  margin: 0.6em 0 2.8em;
+
+  .latest-title {
+    font-size: 1.35em;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover { color: var(--action); }
+  }
+
+  .latest-meta {
+    color: var(--tx-muted);
+    font-size: 0.82em;
+    margin-top: 0.15em;
+  }
+
+  .latest-excerpt {
+    margin-top: 0.6em;
+    color: var(--tx-muted);
+  }
+}
+
 // Recently updated list on home
 .recent-notes {
   list-style: none;
