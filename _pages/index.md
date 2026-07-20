@@ -7,17 +7,15 @@ permalink: /
 
 # Aniket Mishrikotkar
 
-I build software and write about systems, tools, and ideas. This is my digital
-garden — a set of notes I tend over time rather than a stream of dated posts.
-Start with [[welcome]].
+I build software and write about ML systems, infrastructure, and the tools I use.
 
-<strong>Recently updated</strong>
+<strong>Writing</strong>
 
 <ul class="recent-notes">
-  {% assign recent_notes = site.notes | sort: "last_modified_at_timestamp" | reverse %}
-  {% for note in recent_notes limit: 8 %}
+  {% assign posts = site.notes | sort: "date" | reverse %}
+  {% for note in posts %}
     <li>
-      <span class="recent-date">{{ note.last_modified_at | date: "%Y-%m-%d" }}</span>
+      <span class="recent-date">{{ note.date | date: "%Y &middot; %m" }}</span>
       <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
     </li>
   {% endfor %}

@@ -6,9 +6,11 @@ permalink: /about
 
 # About
 
-I'm Aniket. I work on software and keep my notes in public here.
+I'm Aniket. I work on ML systems and infrastructure, and write here about
+things I'm figuring out.
 
-- **Elsewhere:** [GitHub](https://github.com/aniketmi)
-- **Colophon:** see [[colophon]] for how this site is built.
+- **GitHub:** [aniket-mish](https://github.com/aniket-mish)
+- **LinkedIn:** [aniket-mishrikotkar](https://www.linkedin.com/in/aniket-mishrikotkar)
 
-Reach me by editing this page with your preferred contact links.
+This site is built with Jekyll and the [Flexoki](https://github.com/kepano/flexoki)
+palette, hosted on GitHub Pages.
