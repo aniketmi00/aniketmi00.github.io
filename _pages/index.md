@@ -5,10 +5,6 @@ id: home
 permalink: /
 ---
 
-# Aniket Mishrikotkar
-
-I build software and write about ML systems, infrastructure, and the tools I use.
-
 <strong>Writing</strong>
 
 <ul class="recent-notes">
