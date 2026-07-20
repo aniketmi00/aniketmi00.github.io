@@ -1,0 +1,49 @@
+// Code blocks + Rouge syntax highlighting, themed with Flexoki.
+.highlight {
+  background: var(--bg-2);
+  border-radius: 6px;
+  padding: 0.2em 1.1em;
+  font-size: 0.85em;
+  overflow: auto;
+  margin: 1.5em 0;
+
+  code {
+    padding: 0;
+    background: none;
+  }
+
+  pre { margin: 0.6em 0; }
+
+  .c, .cm, .cp, .c1, .cs { color: var(--sy-comment); font-style: italic; } // comments
+  .err { color: var(--sy-re); }
+  .k { color: var(--sy-gr); }                                             // keyword
+  .o, .ow { color: var(--sy-re); }                                        // operator
+  .p { color: var(--tx-muted); }                                          // punctuation
+
+  .kc, .kd, .kp, .kr, .kt { color: var(--sy-bl); }                        // keyword constant/type
+  .m, .mf, .mh, .mi, .mo, .il { color: var(--sy-pu); }                    // numbers
+
+  .s, .sb, .sc, .sd, .sh, .si, .sx, .dl { color: var(--sy-gr); }          // strings
+  .s1, .s2 { color: var(--sy-cy); }
+  .se, .sr, .ss { color: var(--sy-re); }
+
+  .na { color: var(--sy-or); }                                            // attribute
+  .nb, .bp { color: var(--sy-gr); }                                       // builtin
+  .nc, .nf, .nt { color: var(--sy-bl); }                                  // class / function / tag
+  .no, .nv, .vc, .vg, .vi { color: var(--sy-cy); }                        // constant / variable
+  .nn { color: var(--tx-muted); }                                         // namespace
+  .ni, .ne { color: var(--sy-ma); }
+
+  .gd { color: var(--sy-re); }                                            // diff removed
+  .gi { color: var(--sy-gr); }                                            // diff added
+  .ge { font-style: italic; }
+  .gs { font-weight: bold; }
+  .gr, .gt { color: var(--sy-re); }
+  .gh, .gu, .go, .gp { color: var(--tx-muted); }
+
+  .w { color: var(--tx-faint); }
+}
+
+div.highlight {
+  display: grid;
+}
