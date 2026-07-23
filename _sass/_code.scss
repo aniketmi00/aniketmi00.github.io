@@ -1,11 +1,11 @@
 // Code blocks + Rouge syntax highlighting.
-// Always dark (Flexoki dark palette) regardless of page theme.
+// Always dark (neutral bg + syntax colors) regardless of page theme.
 .highlight {
-  // Fixed dark tokens so light mode gets the same vivid code block.
-  --code-bg: #1c1b1a;
-  --code-tx: #cecdc3;
-  --code-muted: #878580;
-  --code-faint: #575653;
+  // Fixed dark tokens so light mode gets the same code block.
+  --code-bg: #1c1d21;
+  --code-tx: #e6e6e6;
+  --code-muted: #9b9c9d;
+  --code-faint: #6c6d70;
   --code-re: #d14d41;
   --code-or: #da702c;
   --code-ye: #d0a215;

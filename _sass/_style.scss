@@ -1,106 +1,49 @@
-// Flexoki palette (MIT, https://github.com/kepano/flexoki). Written for this site.
-:root {
-  --flexoki-black: #100f0f;
-  --flexoki-paper: #fffcf0;
-  --flexoki-50:  #f2f0e5;
-  --flexoki-100: #e6e4d9;
-  --flexoki-150: #dad8ce;
-  --flexoki-200: #cecdc3;
-  --flexoki-300: #b7b5ac;
-  --flexoki-400: #9f9d96;
-  --flexoki-500: #878580;
-  --flexoki-600: #6f6e69;
-  --flexoki-700: #575653;
-  --flexoki-800: #403e3c;
-  --flexoki-850: #343331;
-  --flexoki-900: #282726;
-  --flexoki-950: #1c1b1a;
-  --flexoki-cyan-50:  #ddf1e4;
-  --flexoki-cyan-400: #3aa99f;
-  --flexoki-cyan-600: #24837b;
-  --flexoki-yellow-100: #f6e2a0;
-  --flexoki-yellow-900: #3a2d04;
-}
+// Neutral monochrome palette. Written for this site.
+// Light/dark tokens mirror a near-black/near-white scale (no color accents).
 
 // Theme tokens
 :root,
 .theme-light {
-  --bg: var(--flexoki-paper);
-  --bg-2: var(--flexoki-50);
-  --tx: var(--flexoki-black);
-  --tx-muted: var(--flexoki-600);
-  --tx-faint: var(--flexoki-300);
-  --ui: var(--flexoki-100);
-  --ui-hover: var(--flexoki-150);
-  --highlight: var(--flexoki-yellow-100);
-  --action: var(--flexoki-cyan-600);
-  --bg-hover: var(--flexoki-cyan-50);
-  --selection: rgba(187, 220, 206, 0.35);
-  --link-tint: var(--flexoki-cyan-50);
-  --graph-node: var(--flexoki-cyan-600);
-  --shadow: rgba(16, 15, 15, 0.12);
-  --sy-comment: var(--tx-faint);
-  --sy-re: #af3029;
-  --sy-or: #bc5215;
-  --sy-ye: #ad8301;
-  --sy-gr: #66800b;
-  --sy-cy: #24837b;
-  --sy-bl: #205ea6;
-  --sy-pu: #5e409d;
-  --sy-ma: #a02f6f;
+  --bg: #ffffff;
+  --bg-2: #f5f5f5;
+  --tx: #1f1f1f;
+  --tx-muted: #6c6c6c;
+  --tx-faint: #d6d6d6;
+  --ui: #eeeeee;
+  --ui-hover: #cfcfcf;
+  --highlight: #ececec;
+  --action: #000000;
+  --selection: rgba(0, 0, 0, 0.10);
+  --shadow: rgba(0, 0, 0, 0.12);
 }
 
 .theme-dark {
-  --bg: var(--flexoki-black);
-  --bg-2: var(--flexoki-950);
-  --tx: var(--flexoki-200);
-  --tx-muted: var(--flexoki-500);
-  --tx-faint: var(--flexoki-700);
-  --ui: var(--flexoki-900);
-  --ui-hover: var(--flexoki-850);
-  --highlight: var(--flexoki-yellow-900);
-  --action: var(--flexoki-cyan-400);
-  --bg-hover: #101f1d;
-  --selection: rgba(30, 95, 91, 0.35);
-  --link-tint: #122f2c;
-  --graph-node: var(--flexoki-cyan-400);
+  --bg: #1d1e20;
+  --bg-2: #2e2e33;
+  --tx: #dadadb;
+  --tx-muted: #9b9c9d;
+  --tx-faint: #414244;
+  --ui: #333333;
+  --ui-hover: #4a4b4d;
+  --highlight: #3a3a3a;
+  --action: #ffffff;
+  --selection: rgba(255, 255, 255, 0.14);
   --shadow: rgba(0, 0, 0, 0.6);
-  --sy-comment: var(--tx-faint);
-  --sy-re: #d14d41;
-  --sy-or: #da702c;
-  --sy-ye: #d0a215;
-  --sy-gr: #879a39;
-  --sy-cy: #3aa99f;
-  --sy-bl: #4385be;
-  --sy-pu: #8b7ec8;
-  --sy-ma: #ce5d97;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not(.theme-light) {
-    --bg: var(--flexoki-black);
-    --bg-2: var(--flexoki-950);
-    --tx: var(--flexoki-200);
-    --tx-muted: var(--flexoki-500);
-    --tx-faint: var(--flexoki-700);
-    --ui: var(--flexoki-900);
-    --ui-hover: var(--flexoki-850);
-    --highlight: var(--flexoki-yellow-900);
-    --action: var(--flexoki-cyan-400);
-    --bg-hover: #101f1d;
-    --selection: rgba(30, 95, 91, 0.35);
-    --link-tint: #122f2c;
-    --graph-node: var(--flexoki-cyan-400);
+    --bg: #1d1e20;
+    --bg-2: #2e2e33;
+    --tx: #dadadb;
+    --tx-muted: #9b9c9d;
+    --tx-faint: #414244;
+    --ui: #333333;
+    --ui-hover: #4a4b4d;
+    --highlight: #3a3a3a;
+    --action: #ffffff;
+    --selection: rgba(255, 255, 255, 0.14);
     --shadow: rgba(0, 0, 0, 0.6);
-    --sy-comment: var(--tx-faint);
-    --sy-re: #d14d41;
-    --sy-or: #da702c;
-    --sy-ye: #d0a215;
-    --sy-gr: #879a39;
-    --sy-cy: #3aa99f;
-    --sy-bl: #4385be;
-    --sy-pu: #8b7ec8;
-    --sy-ma: #ce5d97;
   }
 }
 
