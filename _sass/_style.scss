@@ -111,6 +111,21 @@ img {
   border-radius: 6px;
 }
 
+figure {
+  margin: 1.5em 0;
+
+  img {
+    margin: 0 auto 0.5em;
+  }
+}
+
+figcaption {
+  text-align: center;
+  color: var(--tx-muted);
+  font-size: 0.82em;
+  line-height: 1.4;
+}
+
 blockquote {
   padding: 0.75em 1.25em;
   margin: 1.5em 0;
