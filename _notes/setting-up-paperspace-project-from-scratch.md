@@ -5,7 +5,7 @@ date: '2022-08-05 18:30:00+00:00'
 
 ![Paperspace Interface](https://cdn.prod.website-files.com/5db99670374d1d829291af4f/62ddd6d53b3a735337265187_notebooks-gallery-1b.avif)
 
-In the [last post](link_to_previous_post_here), we looked into paperspace and the steps to get started. In this post, we will set up the paperspace project from scratch. We will see how to storage all the packages/credentials in the persistent storage and not lose the data every time we shut down the machine.
+In the [last post](https://medium.com/@aniketmish/introduction-to-jupyter-notebooks-on-paperspace-for-data-scientists-e3ee1e66178e), we looked into paperspace and the steps to get started. In this post, we will set up the paperspace project from scratch. We will see how to storage all the packages/credentials in the persistent storage and not lose the data every time we shut down the machine.
 
 We will start by creating a new machine using fast.ai as a runtime, let the workspace URL remain empty and start the notebook.
 
@@ -29,7 +29,7 @@ Let’s upgrade the `fastcore` package:
 
 ```bash
 pip install -U --user fastcore
-````
+```
 
 `--user` flag installs the package in the home directory.
 
@@ -111,7 +111,7 @@ chmod 744 pre-run.sh
   * 4 is read for the group
   * 4 is read for everyone
 
-You can check out `chmod` commands in detail [here](https://www.google.com/search?q=link_to_chmod_documentation_here).
+You can check out `chmod` commands in detail [here](https://linuxhandbook.com/chmod-command/).
 
 So if you look for the permissions for the pre-run.sh now:
 

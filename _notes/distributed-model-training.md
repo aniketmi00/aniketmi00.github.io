@@ -36,4 +36,4 @@ Using a data parallel approach is very popular but with large language models co
 
 We can see how these large language models are trained on multiple GPU-enabled clusters with FSDP or DeepSpeed.
 
-@Lilian Weng has an in-depth [blog post](https://lnkd.in/gQiqAbDp) on these strategies.
+Lilian Weng has an in-depth [blog post](https://lilianweng.github.io/posts/2021-09-25-train-large/) on these strategies.

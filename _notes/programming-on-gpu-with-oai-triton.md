@@ -8,9 +8,9 @@ _Basic architecture of a GPU._
 
 GPU Programming is very critical and so we need to write kernels in a low-level language like CUDA. Now, there's a language called Triton developed by Open AI which lets you write code in a higher-level and compile to GPUs.
 
-This is one of the talks from the GPU optimization workshop by @Chip Huyen and these are my notes on the topic.
+This is one of the talks from the GPU optimization workshop by Chip Huyen and these are my notes on the topic.
 
-@Phillipe Tillet of Open AI talks about Triton.
+Phillipe Tillet of Open AI talks about Triton.
 	
 1. Triton is a block-based programming language for GPUs.
 	
@@ -38,10 +38,10 @@ This is one of the talks from the GPU optimization workshop by @Chip Huyen and t
 		
 13. SRAM allocation - Compilers allocate not only SRAM (registers) but also shared memory.
 		
-14. Automatic vectorization - analyzes the efficient way to combine loops to get vectorized code from the scaler code.
+14. Automatic vectorization - analyzes the efficient way to combine loops to get vectorized code from the scalar code.
 
 To learn CUDA, my recommendation is to start with Triton and then move to CUDA for advanced/complex use-cases.
 
 Resources to refer:
-1. [Triton Puzzles](https://github.com/srush/Triton-Puzzles/tree/main) by @Sasha Rush
-2. [A Practitioner's Guide to Triton](https://www.youtube.com/watch?v=DdTsX6DQk24) by @Umer Hayat Adil
+1. [Triton Puzzles](https://github.com/srush/Triton-Puzzles/tree/main) by Sasha Rush
+2. [A Practitioner's Guide to Triton](https://www.youtube.com/watch?v=DdTsX6DQk24) by Umer Hayat Adil

@@ -3,7 +3,7 @@ title: how to use tmux and git as a ml engineer
 date: '2022-08-01 18:30:00+00:00'
 ---
 
-This post is the continuation of [how to setup a machine for deep learning in a correct way](link to previous post). You can check it out first before moving on to this post.
+This post is the continuation of [how to setup a machine for deep learning in a correct way](https://medium.com/@aniketmish/how-to-setup-a-machine-for-deep-learning-in-a-correct-way-c2311ef33734). You can check it out first before moving on to this post.
 
 In the last post, we installed pytorch and jupyter lab in our machine. In this post, we will look into:
 
@@ -19,8 +19,8 @@ In the last post, we installed pytorch and jupyter lab in our machine. In this p
 You can have multiple users and the way to switch between them is to use:
 
 ```bash
-sudo -u <usernam> -i
-````
+sudo -u <username> -i
+```
 
 but having multiple users is not recommended though.
 
@@ -28,7 +28,7 @@ but having multiple users is not recommended though.
 
 Git is the version control system where we can commit versions of our code. On Github, you can see the diff between different commits.
 
-To start, you have to first create a new repository on the [Github repositories page](link to Github repositories page).
+To start, you have to first create a new repository on the [Github repositories page](https://github.com/new).
 
 You have the option to add `README.md` which is a markdown file that describes the repository.
 
@@ -46,15 +46,13 @@ cd my-project
 # start working on the project
 ```
 
-You can learn about git commands [here](link to git commands documentation).
+You can learn about git commands [here](https://www.atlassian.com/git/tutorials).
 
 You have to use SSH to clone the git repo.
 
 ## SSH to clone the repository
 
 When you try cloning the repo you will get an error that says permission denied. This is because ssh needs to know the identity of the computer so that you should not access something you are not meant to.
-
-\![Permission denied to clone](link to permission denied image)
 
 There is another way to clone a repo using the HTTPS protocol.
 
@@ -72,15 +70,9 @@ ssh-keygen
 
 This creates a private key for the specific computer and a public key which tells Github who you are.
 
-\![Create a private and public key for SSH clone](link to ssh-keygen image)
-
 Copy the public key and paste it under the SSH key on the settings page of Github.
 
-\![Setting panel to add SSH keys](link to github settings image)
-
 Now if you try cloning the repo, it will get successfully cloned.
-
-\![Git clone using SSH](link to successful clone image)
 
 These are some of the tricks you can use to zip through the directories.
 
@@ -102,7 +94,7 @@ To install tmux on a Mac:
 brew install tmux
 ```
 
-To install brew, check [here](link to brew installation instructions).
+To install brew, check [here](https://brew.sh).
 
 On Linux:
 
@@ -128,11 +120,9 @@ Here are a few help keys for using tmux efficiently:
   * `ctrl + b + d` — Detach and close the terminals
   * `tmux a` — Attach
 
-\![Tmux terminal with multiple panes to switch](link to tmux image)
-
 You can also split panes and ssh into multiple servers.
 
-You can check out more help keys [here](link to tmux help keys).
+You can check out more help keys [here](https://github.com/tmux/tmux/wiki/Getting-Started).
 
 ## Git cycle
 
@@ -141,8 +131,6 @@ If you need to push your changes to a git repository, then you need to follow th
 ```bash
 git status
 ```
-
-\![git status](link to git status untracked image)
 
 Here the app.py is an untracked file.
 
@@ -161,8 +149,6 @@ Now after the above command, app.py is staged for committing to the repo. You ca
 ```bash
 git commit -m "first commit"
 ```
-
-\![git commit -m "message"](link to git commit image)
 
 after committing the file, you can see that there are no more untacked files. These changes are now committed to the git of local filesystem.
 
@@ -184,6 +170,4 @@ git status
 
 Finally, you can check the status and see that the branch is up to date with the latest changes. You can see the file `app.py` under the git repository.
 
-\![Github repo after pushing changes](link to github repo after push image)
-
-These posts are the learnings from [@Jeremy Howard’s youtube video series](link to youtube series) which you should definitely check out.
+These posts are the learnings from [Jeremy Howard's youtube video series](https://youtube.com/playlist?list=PLfYUBJiXbdtSLBPJ1GMx-sQWf6iNhb8mM) which you should definitely check out.

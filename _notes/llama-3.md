@@ -6,9 +6,6 @@ date: '2024-07-24 18:30:00+00:00'
 I went through the [paper released by Meta on Llama 3 herd of models](https://ai.meta.com/research/publications/the-llama-3-herd-of-models/). It's a 92 page research paper with lots of practical know-hows including infrastructure and scaling.
 
 
-<Image src="/llama3.1/llama-banner.png" width="718" height="404" alt="Image" />
-
-
 _TL;DR_
 
 - Meta released their largest open-source language model with 405B parameters.
@@ -49,9 +46,6 @@ They opted for standard transformer architecture with some modifications (no mix
 Performance of fine-tuned Llama 3 models on key benchmark evaluations
 
 
-<Image src="/llama3.1/benchmarks.png" width="718" height="404" alt="Image" />
-
-
 ## Overview
 
 The development of Llama 3 has two main stages:
@@ -65,9 +59,6 @@ To have rich capabilities of image, video and speech they have three additional 
 - Speech adapter training
 
 
-<Image src="/llama3.1/architecture.png" width="718" height="404" alt="Image" />
-
-
 ## Pre-training
 
 Pre-training has:
@@ -77,9 +68,9 @@ Pre-training has:
 They used a variety of data sources containing knowledge until the end of 2023. They applied several de-duplication methods and cleaned the data.
 - Removing PII and adult content.
 - They process the raw HTML content and remove all markdown markers(markdown is harmful to the performance).
-- They apply several rounds of URL-level, document-level level and line-level de-duplication.
-- They used heuristics to remove low quality documents, ouliers and documents with excessive repetitions like the "dirty word" counting to remove adult content.
-- They use fasttest and Roberta-based classifiers to select high-quality tokens.
+- They apply several rounds of URL-level, document-level and line-level de-duplication.
+- They used heuristics to remove low quality documents, outliers and documents with excessive repetitions like the "dirty word" counting to remove adult content.
+- They use fastText and RoBERTa-based classifiers to select high-quality tokens.
 
 *Data mix*
 They have talked about having data from different data sources in the pre-training data mix and to determine the data mix they used knowledge classification(develop classifier to categorize the types of information in the data) and scaling laws(train several models and use that to predict the performance of the model).
@@ -95,9 +86,6 @@ They used a standard dense transformer architecture. Their performance gains are
 - Attention mask - prevents self-attention between different documents within the same sequence
 - Vocabulary of 128K tokens
 - [RoPE](https://blog.eleuther.ai/rotary-embeddings/)(Rotary positional embeddings to understand relative position of the tokens) base frequency hyperparameter to 500,000 - supports longer contexts
-
-
-<Image src="/llama3.1/models.png" width="718" height="404" alt="Image" />
 
 
 ### 3. Determine the model size using the scaling laws
@@ -125,9 +113,6 @@ They discuss about the training infrastructure in amazing detail.
 #### Parallelism for model scaling
 
 This is what I was most excited about and the detail they go into is outstanding. To get a fair amount of understanding, read about it [here](https://openai.com/index/techniques-for-training-large-neural-networks/).
-
-
-<Image src="/llama3.1/parallelism.png" width="718" height="404" alt="Image" />
 
 
 To scale training, they've used 4D parallelism - a combination of four different types of parallelism methods. It combines tensor, pipeline, context and data parallelism.
@@ -158,9 +143,6 @@ The training recipe includes:
 ## Post-training
 
 They align the models by applying several rounds of post-training, or aligning the model with human feedback on top of a pre-trained checkpoint. Each round of post-training involves [supervised finetuning (SFT)](https://cameronrwolfe.substack.com/p/understanding-and-using-supervised) followed by [Direct Preference Optimization (DPO)](https://huggingface.co/blog/pref-tuning) on examples collected either via human annotations or generated synthetically.
-
-
-<Image src="/llama3.1/modeling.png" width="718" height="404" alt="Image" />
 
 
 They first train a reward model on top of the pre-trained checkpoint using human-annotated preference data. Then fine-tune pre-trained checkpoints with supervised fine-tuning (SFT), and further align the checkpoints with Direct Preference Optimization (DPO).

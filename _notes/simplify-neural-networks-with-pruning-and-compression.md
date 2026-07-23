@@ -28,4 +28,4 @@ We need to provide a model, samples and masks.
 
 This will make the model really small and execute faster.
 
-Here's a [quickstart guide](https://lnkd.in/gZPqi658) for nni.
+Here's a [quickstart guide](https://nni.readthedocs.io/en/stable/tutorials/pruning_quick_start.html) for nni.

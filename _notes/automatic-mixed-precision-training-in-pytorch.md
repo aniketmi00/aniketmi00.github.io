@@ -17,7 +17,7 @@ There are other formats like:
 
 1. `FP16` - has 16 bits and is also called as half-precision.
 
-2. `bfloat16` - has 16 bits but has the same range as FP32 but low-precision and pytorch supports bfloat16 only on CPUs. It was created at Google.
+2. `bfloat16` - has 16 bits with the same exponent range as FP32 but lower precision. PyTorch supports bfloat16 on CPUs and on modern GPUs (Ampere and newer). It was created at Google.
 
 3. `TF32` - has 19 bits and the tensorfloat was created at Nvidia.
 

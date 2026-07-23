@@ -9,7 +9,7 @@ recently i was looking at a cost spike in prod. our _requests completed_ rate ha
 
 the problem were the **zombie requests** - upstream inference keeps running after downstream client is gone, so utilization stays high while _completed requests_ drops.
 
-when a client times out or disconnects we assume the server stops working. in many web apps, we assume disconnect stops work, but that’s not a safe assumption—even more so for LLM inference. but in the world of expensive LLM inference this assumption is might burn a lot of money.
+when a client times out or disconnects we assume the server stops working. in many web apps, we assume disconnect stops work, but that’s not a safe assumption—even more so for LLM inference. but in the world of expensive LLM inference this assumption might burn a lot of money.
 
 ```client disconnects → gateway may not notice immediately → upstream inference keeps running until you abort it```
 

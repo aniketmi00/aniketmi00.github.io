@@ -5,9 +5,9 @@ date: '2024-05-28 18:30:00+00:00'
 
 ![CUDA Architecture by Modal](https://modal-cdn.com/gpu-glossary/terminal-cuda-g80.svg)
 
-These are my notes on the GPU optimization workshop organized by @Chip Huyen.
+These are my notes on the GPU optimization workshop organized by Chip Huyen.
 
-@Mark Saroufim talks about techniques to efficiently run PyTorch models and make them faster.
+Mark Saroufim talks about techniques to efficiently run PyTorch models and make them faster.
 
 1. GPUs are expensive because of demand and supply tradeoff and they can make training and serving models faster.
 

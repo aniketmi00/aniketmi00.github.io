@@ -5,9 +5,9 @@ date: '2024-06-02 13:19:00+00:00'
 
 ![LLM Optimization](https://doimages.nyc3.cdn.digitaloceanspaces.com/010AI-ML/2024/Mel/inferenceoptimization101/kvcaching.png)
 
-These are my notes on the GPU optimization workshop organized by @Chip Huyen.
+These are my notes on the GPU optimization workshop organized by Chip Huyen.
 
-@Sharan Chetlur talks about inference optimization techniques and how to achieve high performance while serving LLMs.
+Sharan Chetlur talks about inference optimization techniques and how to achieve high performance while serving LLMs.
 
 1. The majority of the apps are real-time(online systems) and they require acceptable latencies, should be highly accurate(helpful) and should be cost-effective as deploying these large models can be expensive.
 	

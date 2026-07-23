@@ -26,7 +26,7 @@ There are three compiling modes in the API:
 2. reduce-overhead - reduces the overhead of loading batches to memory and is used for small batches.
 3. max-autotune - most optimized code but takes a lot of time to optimize the code.
 
-There's a catch, as per the pytorch docs, compile works best with GPUs of compute capability > 0.8 and on much more complex and deep architectures with a high number of parameters.
+There's a catch, as per the pytorch docs, compile works best with GPUs of compute capability >= 7.0 (Volta and newer) and on much more complex and deep architectures with a high number of parameters.
 
 this is what torch.compile is and what it does. we will see what's happens under the hood later.
 

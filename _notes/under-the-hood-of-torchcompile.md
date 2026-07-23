@@ -17,4 +17,4 @@ Step 1 is executed by `torchdynamo` and is built in CPython and called as the fr
 
 Steps 2 and 3 are executed by the backend compiler torchinductor which uses `openmp` framework and `triton` compiler and this is configurable btw using the `backend` param in the torch.compile. There are many available backends.
 
-@Shashank Prasanna's [super amazing post](https://towardsdatascience.com/how-pytorch-2-0-accelerates-deep-learning-with-operator-fusion-and-cpu-gpu-code-generation-35132a85bd26) about `torch.compile`.
+Shashank Prasanna's [super amazing post](https://towardsdatascience.com/how-pytorch-2-0-accelerates-deep-learning-with-operator-fusion-and-cpu-gpu-code-generation-35132a85bd26) about `torch.compile`.
