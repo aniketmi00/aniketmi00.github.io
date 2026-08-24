@@ -16,7 +16,7 @@ permalink: /
 
 <hr>
 
-<div class="section-label">All notes</div>
+<div class="section-label">writing</div>
 
 <ul class="recent-notes">
   {% for note in posts %}
