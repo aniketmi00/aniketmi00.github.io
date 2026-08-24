@@ -404,6 +404,146 @@ mark {
   }
 }
 
+// Hero toy on home — a small retro terminal illustration
+.hero-toy {
+  display: flex;
+  justify-content: center;
+  margin: 1.6em 0 2.4em;
+  user-select: none;
+
+  .hero-toy-monitor {
+    width: 260px;
+  }
+
+  .hero-toy-screen {
+    position: relative;
+    height: 132px;
+    border-radius: 12px 12px 6px 6px;
+    background: #0c0c0d;
+    border: 1px solid var(--ui);
+    overflow: hidden;
+    padding: 14px 16px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 8px 20px -12px var(--shadow);
+    transition: background 200ms;
+
+    &.is-off {
+      background: #050506;
+
+      .hero-toy-text, .hero-toy-scanlines { opacity: 0; }
+    }
+  }
+
+  .hero-toy-scanlines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.035) 0px,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    transition: opacity 200ms;
+  }
+
+  .hero-toy-text {
+    position: relative;
+    font-family: $mono-family;
+    font-size: 0.72em;
+    line-height: 1.5;
+    color: #d7d8d6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    transition: opacity 200ms;
+  }
+
+  .hero-toy-cursor {
+    display: inline-block;
+    width: 0.5em;
+    margin-left: 1px;
+    background: #d7d8d6;
+    animation: hero-toy-blink 1s step-end infinite;
+  }
+
+  .hero-toy-panel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px;
+    background: var(--bg-2);
+    border: 1px solid var(--ui);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .hero-toy-led {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tx-faint);
+    flex: 0 0 auto;
+    transition: background 200ms, box-shadow 200ms;
+
+    &.is-on {
+      background: #8fd18f;
+      box-shadow: 0 0 4px rgba(143, 209, 143, 0.7);
+    }
+  }
+
+  .hero-toy-switch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: $mono-family;
+    color: var(--tx-muted);
+
+    &:focus { background: none !important; }
+  }
+
+  .hero-toy-switch-track {
+    width: 26px;
+    height: 14px;
+    border: 1px solid var(--ui-hover);
+    border-radius: 999px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .hero-toy-switch-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--tx-muted);
+    transition: left 0.12s linear, background-color 0.12s linear;
+  }
+
+  .hero-toy-switch.is-on .hero-toy-switch-knob {
+    left: 14px;
+    background: var(--action);
+  }
+
+  .hero-toy-switch:hover .hero-toy-switch-knob { background: var(--action); }
+
+  .hero-toy-switch-label {
+    font-size: 0.62em;
+    letter-spacing: 0.02em;
+  }
+}
+
+@keyframes hero-toy-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 // Recently updated list on home
 .recent-notes {
   list-style: none;
