@@ -428,3 +428,167 @@ mark {
 
   a { flex: 1; }
 }
+
+// Retro Macintosh on home, in place of the old featured list
+.mac-stage {
+  --mac-case: #e6e4e0;
+  --mac-case-2: #d3d0cb;
+  --mac-case-edge: #b9b6b0;
+  --mac-bezel: #cfccc6;
+  --mac-crt: #101112;
+  --mac-phosphor: #e8e8e8;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5em 0 3.2em;
+}
+
+.theme-dark .mac-stage {
+  --mac-case: #3a3b3e;
+  --mac-case-2: #2c2d30;
+  --mac-case-edge: #202124;
+  --mac-bezel: #26272a;
+  --mac-crt: #0b0c0d;
+  --mac-phosphor: #dadadb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light) .mac-stage {
+    --mac-case: #3a3b3e;
+    --mac-case-2: #2c2d30;
+    --mac-case-edge: #202124;
+    --mac-bezel: #26272a;
+    --mac-crt: #0b0c0d;
+    --mac-phosphor: #dadadb;
+  }
+}
+
+.mac {
+  width: clamp(230px, 62%, 320px);
+}
+
+.mac-case {
+  background: linear-gradient(160deg, var(--mac-case), var(--mac-case-2));
+  border: 1px solid var(--mac-case-edge);
+  border-radius: 16px 16px 10px 10px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 18px 40px -18px var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.mac-bezel {
+  background: var(--mac-bezel);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.28);
+}
+
+.mac-crt {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--mac-crt);
+  border-radius: 12px / 16px;
+  overflow: hidden;
+  box-shadow: inset 0 0 22px rgba(0, 0, 0, 0.9);
+}
+
+.mac-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.mac-text {
+  font-family: $mono-family;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--mac-phosphor);
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
+}
+
+.mac-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  background: var(--mac-phosphor);
+  animation: mac-blink 1.05s steps(1) infinite;
+}
+
+@keyframes mac-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.mac-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 80% at 25% 8%, rgba(255, 255, 255, 0.12), transparent 55%);
+}
+
+.mac-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.28) 0px,
+    rgba(0, 0, 0, 0.28) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.55;
+}
+
+.mac-lower {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 0 4px;
+}
+
+.mac-badge {
+  font-family: $mono-family;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tx-muted);
+}
+
+.mac-drive {
+  flex: 0 0 44%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--mac-case-edge);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.mac-foot {
+  width: 78%;
+  height: 10px;
+  margin: 0 auto;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(180deg, var(--mac-case-2), var(--mac-case-edge));
+  box-shadow: 0 10px 20px -12px var(--shadow);
+}
+
+.mac-caption {
+  font-family: $mono-family;
+  font-size: 0.78em;
+  color: var(--tx-muted);
+  margin-top: 1.4em;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mac-cursor { animation: none; }
+}
