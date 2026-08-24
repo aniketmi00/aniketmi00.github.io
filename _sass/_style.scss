@@ -193,8 +193,17 @@ nav {
   }
 
   .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
     font-weight: 600;
     color: var(--tx);
+
+    .logo-mark {
+      width: 1.3em;
+      height: auto;
+      flex: 0 0 auto;
+    }
   }
 }
 
