@@ -35,6 +35,12 @@ body {
   color: var(--tx);
   font-size: clamp(1rem, 0.95rem + 0.35vw, 1.15rem);
   max-width: 48em;
+  text-transform: lowercase;
+}
+
+// Code is case-sensitive — exempt it from the site-wide lowercase style.
+code, kbd, samp, pre {
+  text-transform: none;
 }
 
 ::selection {
