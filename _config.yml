@@ -1,5 +1,5 @@
 title:               Aniket Mishrikotkar
-github:              aniket-mish
+github:              aniketmi00
 linkedin:            aniketmish   # linkedin.com/in/<handle>
 include:             ['_pages']
 timezone:            Asia/Kolkata   # IANA zone for footer clock
@@ -10,7 +10,7 @@ exclude:             ['_includes/notes_graph.json', 'README.md', 'LICENSE', 'net
 # For a user site (repo named aniketmi.github.io) keep baseurl empty.
 # For a project site (repo named something else) set: baseurl: '/reponame'
 baseurl:             ''
-url:                 'https://aniket-mish.github.io'
+url:                 'https://aniketmi00.github.io'
 
 # If you are using a host that cannot resolve URLs that do
 # not end with .html (such as Neocities), set this to 'true'.

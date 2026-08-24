@@ -41,7 +41,7 @@ You can also add the `License`. Typically, you should use the Apache 2.0 under w
 To **clone** or copy the existing repo into the local filesystem use:
 
 ```bash
-git clone git@github.com:aniket-mish/my-project.git
+git clone git@github.com:aniketmi00/my-project.git
 cd my-project
 # start working on the project
 ```
