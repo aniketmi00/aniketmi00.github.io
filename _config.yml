@@ -1,6 +1,7 @@
 title:               Aniket Mishrikotkar
 github:              aniketmi00
 linkedin:            aniketmish   # linkedin.com/in/<handle>
+twitter:             aniketmi_00  # x.com/<handle>
 include:             ['_pages']
 timezone:            Asia/Kolkata   # IANA zone for footer clock
 timezone_label:      IST            # short label shown after time (e.g. PT, IST)
