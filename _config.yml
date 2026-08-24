@@ -4,6 +4,7 @@ linkedin:            aniketmish   # linkedin.com/in/<handle>
 include:             ['_pages']
 timezone:            Asia/Kolkata   # IANA zone for footer clock
 timezone_label:      IST            # short label shown after time (e.g. PT, IST)
+image:               /assets/og-default.png   # fallback social card when a page sets no page.image
 
 exclude:             ['_includes/notes_graph.json', 'README.md', 'LICENSE', 'netlify.toml']
 # For a user site (repo named aniketmi.github.io) keep baseurl empty.
