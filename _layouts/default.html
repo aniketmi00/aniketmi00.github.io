@@ -7,24 +7,5 @@
       <main>{{ content }}</main>
       <footer>{% include footer.html %}</footer>
     </div>
-
-    <script>
-      (function () {
-        var root = document.documentElement;
-        var btn = document.getElementById("theme-toggle");
-        if (!btn) return;
-        function currentIsDark() {
-          if (root.classList.contains("theme-dark")) return true;
-          if (root.classList.contains("theme-light")) return false;
-          return window.matchMedia("(prefers-color-scheme: dark)").matches;
-        }
-        btn.addEventListener("click", function () {
-          var dark = !currentIsDark();
-          root.classList.toggle("theme-dark", dark);
-          root.classList.toggle("theme-light", !dark);
-          try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) {}
-        });
-      })();
-    </script>
   </body>
 </html>

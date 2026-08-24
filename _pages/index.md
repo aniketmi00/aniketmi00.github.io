@@ -16,10 +16,6 @@ permalink: /
 
 <hr>
 
-{% include retro-mac.html %}
-
-<hr>
-
 <div class="section-label">All notes</div>
 
 <ul class="recent-notes">
