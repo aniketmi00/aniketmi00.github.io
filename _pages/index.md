@@ -8,7 +8,7 @@ permalink: /
 {% assign posts = site.notes | sort: "date" | reverse %}
 
 <div class="intro">
-  <p>i'm aniket. i work on ML inference systems at warner bros. discovery. i write about machine learning, the systems i build, and papers i'm reading.</p>
+  <p>i'm aniket. i work on ML inference systems at warner bros. discovery, serving models in production for hbo max. i write about inference internals, how these systems actually behave under real latency and cost constraints, the things i build, and what i'm learning as i go.</p>
   <div class="intro-social">
     {% include social-icons.html %}
   </div>
