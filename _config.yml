@@ -30,6 +30,15 @@ relative_permalinks: false
 
 plugins:
   - jekyll-last-modified-at
+  - jekyll-sitemap
+  - jekyll-feed
+
+# jekyll-feed only feeds site.posts by default; this site's writing lives
+# in the "notes" collection, so point it there instead.
+feed:
+  collections:
+    notes:
+      path: "feed/notes.xml"
 
 sass:
   sass_dir:          _sass
