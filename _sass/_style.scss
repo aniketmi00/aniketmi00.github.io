@@ -1,6 +1,21 @@
-// Pure black-and-white palette. Dark mode only, no gray tones —
-// muted/border tones are white at reduced opacity rather than a gray hex.
-:root {
+// Pure black-and-white palette, light and dark. No gray tones anywhere —
+// muted/border tones are the ink color at reduced opacity, not a gray hex.
+:root,
+.theme-light {
+  --bg: #ffffff;
+  --bg-2: #ffffff;
+  --tx: #000000;
+  --tx-muted: rgba(0, 0, 0, 0.6);
+  --tx-faint: rgba(0, 0, 0, 0.32);
+  --ui: rgba(0, 0, 0, 0.12);
+  --ui-hover: rgba(0, 0, 0, 0.24);
+  --highlight: rgba(0, 0, 0, 0.06);
+  --action: #000000;
+  --selection: rgba(0, 0, 0, 0.12);
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+.theme-dark {
   --bg: #000000;
   --bg-2: #000000;
   --tx: #ffffff;
@@ -12,6 +27,22 @@
   --action: #ffffff;
   --selection: rgba(255, 255, 255, 0.18);
   --shadow: rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light) {
+    --bg: #000000;
+    --bg-2: #000000;
+    --tx: #ffffff;
+    --tx-muted: rgba(255, 255, 255, 0.6);
+    --tx-faint: rgba(255, 255, 255, 0.32);
+    --ui: rgba(255, 255, 255, 0.14);
+    --ui-hover: rgba(255, 255, 255, 0.28);
+    --highlight: rgba(255, 255, 255, 0.1);
+    --action: #ffffff;
+    --selection: rgba(255, 255, 255, 0.18);
+    --shadow: rgba(0, 0, 0, 0.6);
+  }
 }
 
 $border-radius: 4px;
@@ -206,6 +237,46 @@ nav {
     }
   }
 }
+
+// Theme toggle switch
+#theme-toggle {
+  height: 22px;
+  width: 42px;
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+
+  &:after { content: ""; }
+  &:focus { background: none !important; }
+
+  .theme-toggle-slide {
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--ui-hover);
+    border-radius: 999px;
+    box-sizing: border-box;
+  }
+
+  .theme-toggle-switch {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--tx-muted);
+    box-sizing: border-box;
+    transition: left 0.12s linear, background-color 0.12s linear;
+  }
+
+  &:hover .theme-toggle-switch { background: var(--action); }
+}
+
+.theme-dark #theme-toggle .theme-toggle-switch { left: 23px; background: var(--tx); }
 
 #notes-entry-container {
   display: grid;

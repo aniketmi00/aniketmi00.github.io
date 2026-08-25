@@ -11,6 +11,16 @@
 
   <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/favicon.svg">
 
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark') document.documentElement.classList.add('theme-dark');
+        if (t === 'light') document.documentElement.classList.add('theme-light');
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/feed/notes.xml">
 
   <link rel="preload" as="font" type="font/woff2" href="{{ site.baseurl }}/assets/fonts/geist-sans-latin-wght-normal.woff2" crossorigin>
