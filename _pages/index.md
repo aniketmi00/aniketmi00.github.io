@@ -8,7 +8,7 @@ permalink: /
 {% assign posts = site.notes | sort: "date" | reverse %}
 
 <div class="intro">
-  <p>I'm Aniket. I work on model inference systems for <a href="https://www.hbomax.com">HBO Max</a> @ <a href="https://www.wbd.com">Warner Bros. Discovery</a>. I write about machine learning, systems I've built, and things I'm reading.</p>
+  <p>i'm aniket. i work on ML inference systems at warner bros. discovery, serving models in production for hbo max. i write about inference internals, how these systems actually behave under real latency and cost constraints, the things i build, and what i'm learning as i go.</p>
   <div class="intro-social">
     {% include social-icons.html %}
   </div>
@@ -16,7 +16,7 @@ permalink: /
 
 <hr>
 
-<div class="section-label">All notes</div>
+<div class="section-label">writing</div>
 
 <ul class="recent-notes">
   {% for note in posts %}
