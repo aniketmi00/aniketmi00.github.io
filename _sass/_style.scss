@@ -278,35 +278,6 @@ nav {
 
 .theme-dark #theme-toggle .theme-toggle-switch { left: 23px; background: var(--tx); }
 
-#notes-entry-container {
-  display: grid;
-  grid-gap: 2.5em;
-  grid-template-areas:
-    "content"
-    "side";
-
-  @media (min-width: 700px) {
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: "content side";
-  }
-}
-
-side h3 {
-  color: var(--tx-muted);
-  font-weight: 600;
-  font-size: 0.85em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.backlink-box {
-  background: var(--bg-2);
-  border: 1px solid var(--ui);
-  padding: 0.9em;
-  border-radius: $border-radius;
-  line-height: 1.35;
-}
-
 code {
   background: var(--bg-2);
   color: var(--tx);
@@ -357,12 +328,6 @@ mark {
 // Intro block on home
 .intro {
   margin: 0.5em 0 2em;
-
-  .intro-name {
-    color: var(--action);
-    font-weight: 500;
-    margin-bottom: 0.6em;
-  }
 
   p {
     margin: 0;

@@ -44,6 +44,7 @@ feed:
 sass:
   sass_dir:          _sass
   style:            :compressed
+  sourcemap:         never   # don't ship styles.css.map to production
 
 collections:
   notes:
