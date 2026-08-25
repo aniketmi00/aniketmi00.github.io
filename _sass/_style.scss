@@ -109,6 +109,9 @@ footer {
 
 img {
   max-width: 100%;
+  // Images carry intrinsic width/height so the browser can reserve space
+  // before they load; height:auto keeps the ratio once max-width scales them.
+  height: auto;
   display: block;
   margin: 1.5em auto;
   max-height: 75vh;

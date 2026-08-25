@@ -3,7 +3,7 @@ title: zombie requests
 date: '2025-12-30 04:56:00+00:00'
 ---
 
-![cat](https://raw.githubusercontent.com/aniketmi00/blog-images/main/cat-cancellation-stream.png)
+<img src="/assets/images/cat-cancellation-stream.webp" alt="cat" width="1600" height="873">
 
 recently i was looking at a cost spike in prod. our _requests completed_ rate had dropped, but our _GPU utilization_ stayed at 100%.
 

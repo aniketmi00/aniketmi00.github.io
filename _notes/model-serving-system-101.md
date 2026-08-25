@@ -4,8 +4,8 @@ date: '2025-12-10 12:35:00+00:00'
 ---
 
 <figure>
-  <img src="https://raw.githubusercontent.com/aniketmi00/blog-images/main/serving-system.png"
-       alt="serving system">
+  <img src="/assets/images/serving-system.webp"
+       alt="serving system" width="1600" height="982">
   <figcaption>serving system architecture for inference</figcaption>
 </figure>
 

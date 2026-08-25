@@ -3,7 +3,7 @@ title: practices i’m carrying into 2026
 date: '2025-12-28 07:19:00+00:00'
 ---
 
-![calm](https://raw.githubusercontent.com/aniketmi00/blog-images/main/2026.png)
+<img src="/assets/images/2026.webp" alt="calm" width="1600" height="1002">
 
 i have realized i spend too much time optimizing my work and not enough time optimizing my life. 
 
