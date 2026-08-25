@@ -1,15 +1,43 @@
-<svg class="logo-mark" viewBox="0 0 27 20" fill="currentColor" aria-hidden="true">
-  <rect x="0" y="0" width="6" height="6" rx="1"/>
-  <rect x="7" y="0" width="6" height="6" rx="1"/>
-  <rect x="14" y="0" width="6" height="6" rx="1"/>
-  <rect x="21" y="0" width="6" height="6" rx="1"/>
+<svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+  <defs>
+    <linearGradient id="logoGlassBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3BE07C"/>
+      <stop offset="0.55" stop-color="#1FB157"/>
+      <stop offset="1" stop-color="#0C7A3C"/>
+    </linearGradient>
+    <linearGradient id="logoRim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.4" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="logoSoften" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.7"/>
+    </filter>
+    <clipPath id="logoBadgeClip">
+      <rect width="32" height="32" rx="8"/>
+    </clipPath>
+  </defs>
 
-  <rect x="0" y="7" width="6" height="6" rx="1"/>
-  <rect x="14" y="7" width="6" height="6" rx="1"/>
-  <rect x="21" y="7" width="6" height="6" rx="1"/>
+  <rect width="32" height="32" rx="8" fill="url(#logoGlassBg)"/>
 
-  <rect x="0" y="14" width="6" height="6" rx="1"/>
-  <rect x="7" y="14" width="6" height="6" rx="1"/>
-  <rect x="14" y="14" width="6" height="6" rx="1"/>
-  <rect x="21" y="14" width="6" height="6" rx="1"/>
+  <g clip-path="url(#logoBadgeClip)">
+    <ellipse cx="10" cy="4" rx="16" ry="9" fill="#ffffff" opacity="0.4" filter="url(#logoSoften)"/>
+    <ellipse cx="26" cy="29" rx="14" ry="9" fill="#04431F" opacity="0.35" filter="url(#logoSoften)"/>
+  </g>
+
+  <rect x="0.6" y="0.6" width="30.8" height="30.8" rx="7.4" fill="none" stroke="url(#logoRim)" stroke-width="1.1"/>
+
+  <g fill="#ffffff">
+    <rect x="5.9" y="8.5" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="11.15" y="8.5" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="16.4" y="8.5" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="21.65" y="8.5" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="5.9" y="13.75" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="16.4" y="13.75" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="21.65" y="13.75" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="5.9" y="19" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="11.15" y="19" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="16.4" y="19" width="4.5" height="4.5" rx="0.8"/>
+    <rect x="21.65" y="19" width="4.5" height="4.5" rx="0.8"/>
+  </g>
 </svg>
