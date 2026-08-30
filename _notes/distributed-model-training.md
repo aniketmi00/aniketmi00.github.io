@@ -3,7 +3,7 @@ title: understand distributed model training
 date: '2024-10-10 18:30:00+00:00'
 ---
 
-![Training large neural networks](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcb904906-74e4-4388-a4e8-2248884be589_1518x592.png)
+![Training large neural networks](/assets/images/training-large-nn.webp){: width="1456" height="568"}
 
 Once we have fully optimized our architecture, only then should we move towards distributed training
 

@@ -3,7 +3,7 @@ title: speculative decoding
 date: '2024-06-10 18:30:00+00:00'
 ---
 
-![Speculative Decoding](https://media.licdn.com/dms/image/v2/D5622AQE3YG2yAVvxuw/feedshare-shrink_800/feedshare-shrink_800/0/1731787719280?e=2147483647&v=beta&t=bz2ce4T7CL2UWr_2mNarirqZyJ0nOtIDPQgrVHA4nK8)
+![Speculative Decoding](/assets/images/speculative-decoding.webp){: width="800" height="450"}
 _Image by Hongliang Liu_
 
 Speculative decoding is an optimization technique for llms at inference time. In spec decode, we actually make guesses about future tokens while generating the current one, all within a single forward pass.

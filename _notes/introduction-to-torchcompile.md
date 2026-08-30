@@ -3,7 +3,7 @@ title: intro to torch compile
 date: '2024-09-04 18:30:00+00:00'
 ---
 
-![Torch Compile](https://miro.medium.com/v2/resize:fit:1400/0*bHIRpgT9w4hOQR9v)
+![Torch Compile](/assets/images/torch-compile.webp){: width="1203" height="735"}
 
 PyTorch has two execution modes:
 

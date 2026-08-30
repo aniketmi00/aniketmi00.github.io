@@ -3,7 +3,7 @@ title: how to automate your ml project with gitlab and dataiku
 date: '2023-09-05 18:30:00+00:00'
 ---
 
-![Automation](https://images.unsplash.com/photo-1647427060118-4911c9821b82?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+![Automation](/assets/images/automation.webp){: width="1600" height="1067"}
 
 ## Introduction
 

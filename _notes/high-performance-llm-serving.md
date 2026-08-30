@@ -3,7 +3,7 @@ title: how to enable high performance LLM serving
 date: '2024-06-02 13:19:00+00:00'
 ---
 
-![LLM Optimization](https://doimages.nyc3.cdn.digitaloceanspaces.com/010AI-ML/2024/Mel/inferenceoptimization101/kvcaching.png)
+![LLM Optimization](/assets/images/llm-optimization.webp){: width="1310" height="886"}
 
 These are my notes on the GPU optimization workshop organized by Chip Huyen.
 

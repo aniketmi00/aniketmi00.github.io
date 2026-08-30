@@ -3,7 +3,7 @@ title: programming on GPU with openai triton
 date: '2024-06-06 18:30:00+00:00'
 ---
 
-![Basic architecture of a GPU](https://images.ctfassets.net/kftzwdyauwt9/778bccdf-6cb5-4d9f-3a247ae7f2e3/9e6d1bb6bc09e1f7b3a9adc50fc776b3/gpu-architecture.svg?w=3840&q=90)
+![Basic architecture of a GPU](/assets/images/triton-gpu-architecture.svg){: width="796" height="254"}
 _Basic architecture of a GPU._
 
 GPU Programming is very critical and so we need to write kernels in a low-level language like CUDA. Now, there's a language called Triton developed by Open AI which lets you write code in a higher-level and compile to GPUs.
