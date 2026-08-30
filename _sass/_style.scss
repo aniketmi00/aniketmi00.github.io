@@ -282,9 +282,10 @@ nav {
 .theme-dark #theme-toggle .theme-toggle-switch { left: 23px; background: var(--tx); }
 
 code {
-  background: var(--bg-2);
+  background: var(--highlight);
   color: var(--tx);
-  padding: 0.1em 0.3em;
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--ui);
   border-radius: $border-radius;
   font-size: 1em;
   font-family: $mono-family;
