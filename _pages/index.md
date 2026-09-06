@@ -14,6 +14,8 @@ permalink: /
   </div>
 </div>
 
+{% include wave-banner.html %}
+
 <hr>
 
 <div class="section-label">writing</div>
