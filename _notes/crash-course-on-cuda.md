@@ -3,7 +3,7 @@ title: crash course on CUDA
 date: '2024-05-28 18:30:00+00:00'
 ---
 
-![CUDA Architecture by Modal](https://modal-cdn.com/gpu-glossary/terminal-cuda-g80.svg)
+![CUDA Architecture by Modal](/assets/images/cuda-g80.svg){: width="1531" height="883"}
 
 These are my notes on the GPU optimization workshop organized by Chip Huyen.
 

@@ -3,7 +3,7 @@ title: setting up a paperspace project from scratch
 date: '2022-08-05 18:30:00+00:00'
 ---
 
-![Paperspace Interface](https://cdn.prod.website-files.com/5db99670374d1d829291af4f/62ddd6d53b3a735337265187_notebooks-gallery-1b.avif)
+![Paperspace Interface](/assets/images/paperspace-notebooks.avif){: width="1792" height="1137"}
 
 In the [last post](https://medium.com/@aniketmish/introduction-to-jupyter-notebooks-on-paperspace-for-data-scientists-e3ee1e66178e), we looked into paperspace and the steps to get started. In this post, we will set up the paperspace project from scratch. We will see how to storage all the packages/credentials in the persistent storage and not lose the data every time we shut down the machine.
 

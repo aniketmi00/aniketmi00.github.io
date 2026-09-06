@@ -3,7 +3,7 @@ title: simplify neural nets with pruning and compression
 date: '2024-10-01 18:30:00+00:00'
 ---
 
-![NNI by Microsoft](https://nni.readthedocs.io/en/v2.3/_images/compression_flow.jpg)
+![NNI by Microsoft](/assets/images/nni-compression-flow.webp){: width="1600" height="595"}
 _Compression pipeline in NNI_
 
 ## Pruning
