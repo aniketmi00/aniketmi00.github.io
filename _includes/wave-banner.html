@@ -1,104 +1,100 @@
-<div class="wave-banner" aria-hidden="true">
-  <canvas id="wave-canvas"></canvas>
-</div>
+<div class="wave-banner" id="wave-banner" aria-hidden="true"></div>
 
 <script>
   (function () {
-    var canvas = document.getElementById("wave-canvas");
-    if (!canvas || !canvas.getContext) return;
+    var root = document.getElementById("wave-banner");
+    if (!root) return;
 
-    var ctx = canvas.getContext("2d");
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    var roundable = typeof ctx.roundRect === "function";
+    var cells = [];              // flat list of spans
+    var coords = [];             // matching [u, v] per cell, precomputed
+    var cols = 0, rows = 0;
+    var running = false, onScreen = true, rafId = null, startedAt = 0, lastDraw = 0;
 
-    // Capsule geometry in CSS pixels — tall and narrow, not square.
-    var CELL_W = 8, CELL_H = 18, GAP_X = 5, GAP_Y = 6, RADIUS = 3.5;
-
-    var cols = 0, rows = 0, originX = 0, originY = 0, ink = "255,255,255";
-    var running = false, visible = true, rafId = null, startedAt = 0;
-
-    function readInk() {
-      // Draw white ink on dark themes, black ink on light ones.
-      var bg = getComputedStyle(document.body).backgroundColor || "";
-      var m = bg.match(/\d+/g);
-      if (!m) return;
-      var luma = (0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2]) / 255;
-      ink = luma < 0.5 ? "255,255,255" : "0,0,0";
+    // Read the cell metrics from CSS so the two stay in sync.
+    function metric(name, fallback) {
+      var raw = getComputedStyle(root).getPropertyValue(name).trim();
+      var n = parseFloat(raw);
+      return isNaN(n) ? fallback : n;
     }
 
-    function layout() {
-      var rect = canvas.getBoundingClientRect();
-      if (!rect.width || !rect.height) return false;
+    function build() {
+      var w = root.clientWidth, h = root.clientHeight;
+      if (!w || !h) return false;
 
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = Math.round(rect.width * dpr);
-      canvas.height = Math.round(rect.height * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var cw = metric("--cell-w", 9),
+          ch = metric("--cell-h", 22),
+          gap = metric("--cell-gap", 3);
 
-      cols = Math.max(1, Math.floor((rect.width + GAP_X) / (CELL_W + GAP_X)));
-      rows = Math.max(1, Math.floor((rect.height + GAP_Y) / (CELL_H + GAP_Y)));
+      var nextCols = Math.max(1, Math.floor((w + gap) / (cw + gap)));
+      var nextRows = Math.max(1, Math.floor((h + gap) / (ch + gap)));
+      if (nextCols === cols && nextRows === rows && cells.length) return true;
 
-      // Centre the grid so the leftover pixels split evenly.
-      originX = (rect.width - (cols * (CELL_W + GAP_X) - GAP_X)) / 2;
-      originY = (rect.height - (rows * (CELL_H + GAP_Y) - GAP_Y)) / 2;
+      cols = nextCols;
+      rows = nextRows;
+      root.style.gridTemplateColumns = "repeat(" + cols + ", " + cw + "px)";
+
+      // Build once into a fragment rather than appending cell by cell.
+      var frag = document.createDocumentFragment();
+      cells = new Array(cols * rows);
+      coords = new Array(cols * rows);
+
+      for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < cols; c++) {
+          var i = r * cols + c;
+          var span = document.createElement("span");
+          span.className = "wave-cell";
+          cells[i] = span;
+          coords[i] = [
+            cols === 1 ? 0.5 : c / (cols - 1),
+            rows === 1 ? 0.5 : r / (rows - 1)
+          ];
+          frag.appendChild(span);
+        }
+      }
+      root.textContent = "";
+      root.appendChild(frag);
       return true;
     }
 
-    // Brightness field: a dim shimmer everywhere, plus two undulating ridges
-    // that travel across the grid at different speeds.
-    function brightness(u, v, t) {
+    // Dim field with two undulating ridges travelling across it.
+    function value(u, v, t) {
       var ridge = 0.44 + 0.17 * Math.sin(u * 5.6 + t * 0.75)
                        + 0.09 * Math.sin(u * 11.3 - t * 1.25);
       var d = v - ridge;
       var glow = Math.exp(-(d * d) / 0.007) * (0.55 + 0.45 * Math.sin(u * 4.7 - t * 1.05));
 
-      var ridge2 = 0.62 + 0.13 * Math.sin(u * 4.1 - t * 0.55 + 2.1);
-      var d2 = v - ridge2;
+      var d2 = v - (0.62 + 0.13 * Math.sin(u * 4.1 - t * 0.55 + 2.1));
       var glow2 = Math.exp(-(d2 * d2) / 0.004) * 0.45
                 * (0.5 + 0.5 * Math.sin(u * 7.9 + t * 0.9));
 
-      // Floor keeps every capsule faintly visible, so the grid itself reads
-      // as structure rather than the lit cells floating in the dark.
-      var shimmer = 0.13 + 0.05 * Math.sin(u * 18.0 + v * 9.0 + t * 1.6);
+      var shimmer = 0.08 + 0.05 * Math.sin(u * 18.0 + v * 9.0 + t * 1.6);
       var b = shimmer + glow * 0.85 + glow2;
       return b < 0 ? 0 : b > 1 ? 1 : b;
     }
 
-    function draw(t) {
-      var rect = canvas.getBoundingClientRect();
-      ctx.clearRect(0, 0, rect.width, rect.height);
-
-      for (var r = 0; r < rows; r++) {
-        var v = rows === 1 ? 0.5 : r / (rows - 1);
-        var y = originY + r * (CELL_H + GAP_Y);
-
-        for (var c = 0; c < cols; c++) {
-          var u = cols === 1 ? 0.5 : c / (cols - 1);
-          var a = brightness(u, v, t);
-          if (a < 0.012) continue;
-
-          ctx.fillStyle = "rgba(" + ink + "," + a.toFixed(3) + ")";
-          var x = originX + c * (CELL_W + GAP_X);
-
-          if (roundable) {
-            ctx.beginPath();
-            ctx.roundRect(x, y, CELL_W, CELL_H, RADIUS);
-            ctx.fill();
-          } else {
-            ctx.fillRect(x, y, CELL_W, CELL_H);
-          }
-        }
+    function paint(t) {
+      for (var i = 0; i < cells.length; i++) {
+        var p = coords[i];
+        cells[i].style.setProperty("--v", value(p[0], p[1], t).toFixed(3));
       }
     }
 
+    // ~30fps is plenty for a slow wave and halves the style-recalc cost of
+    // writing a custom property on every cell.
+    var FRAME_MS = 33;
+
     function frame(now) {
       if (!startedAt) startedAt = now;
-      draw((now - startedAt) / 1000);
+      if (now - lastDraw >= FRAME_MS) {
+        lastDraw = now;
+        paint((now - startedAt) / 1000);
+      }
       rafId = requestAnimationFrame(frame);
     }
 
     function start() {
-      if (running || reduced.matches || !visible || document.hidden) return;
+      if (running || reduced.matches || !onScreen || document.hidden) return;
       running = true;
       rafId = requestAnimationFrame(frame);
     }
@@ -109,24 +105,18 @@
       rafId = null;
     }
 
-    function renderStatic() {
-      if (layout()) draw(0);
-    }
-
     function reset() {
       stop();
-      readInk();
-      if (!layout()) return;
-      if (reduced.matches) draw(0);
+      if (!build()) return;
+      if (reduced.matches) paint(0);
       else start();
     }
 
-    // Only animate while on screen.
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(function (entries) {
-        visible = entries[0].isIntersecting;
-        visible ? start() : stop();
-      }, { threshold: 0 }).observe(canvas);
+        onScreen = entries[0].isIntersecting;
+        onScreen ? start() : stop();
+      }, { threshold: 0 }).observe(root);
     }
 
     document.addEventListener("visibilitychange", function () {
@@ -138,12 +128,6 @@
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(reset, 150);
     });
-
-    // Repaint in the new ink colour when the theme toggle flips a class.
-    new MutationObserver(function () {
-      readInk();
-      if (reduced.matches) renderStatic();
-    }).observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
     if (reduced.addEventListener) reduced.addEventListener("change", reset);
     reset();

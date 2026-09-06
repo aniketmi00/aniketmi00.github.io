@@ -13,6 +13,7 @@
   --action: #000000;
   --selection: rgba(0, 0, 0, 0.12);
   --shadow: rgba(0, 0, 0, 0.12);
+  --wave-ink: 0, 0, 0;
 }
 
 .theme-dark {
@@ -27,6 +28,7 @@
   --action: #ffffff;
   --selection: rgba(255, 255, 255, 0.18);
   --shadow: rgba(0, 0, 0, 0.6);
+  --wave-ink: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,6 +44,7 @@
     --action: #ffffff;
     --selection: rgba(255, 255, 255, 0.18);
     --shadow: rgba(0, 0, 0, 0.6);
+    --wave-ink: 255, 255, 255;
   }
 }
 
@@ -387,15 +390,31 @@ mark {
   a { flex: 1; }
 }
 
-// Animated capsule-grid banner on home
+// Animated capsule-grid banner on home.
+// Cells are real elements so each one can respond to hover; JS only writes
+// the per-cell --v, and CSS turns that into an alpha.
 .wave-banner {
-  margin: 2.2em 0 2.6em;
-  // Full-bleed within the content column, a touch wider than the text measure.
-  height: clamp(140px, 24vw, 220px);
+  --cell-w: 9px;
+  --cell-h: 22px;
+  --cell-gap: 3px;
 
-  canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
+  display: grid;
+  grid-auto-rows: var(--cell-h);
+  justify-content: center;
+  gap: var(--cell-gap);
+  height: clamp(150px, 24vw, 226px);
+  overflow: hidden;
+  margin: 2.2em 0 2.6em;
+}
+
+.wave-cell {
+  border-radius: 2px;
+  background-color: rgba(var(--wave-ink), calc(0.06 + 0.86 * var(--v, 0)));
+}
+
+// Pointer devices only, so the highlight doesn't stick on touch.
+@media (hover: hover) {
+  .wave-cell:hover {
+    background-color: rgba(var(--wave-ink), 1);
   }
 }
